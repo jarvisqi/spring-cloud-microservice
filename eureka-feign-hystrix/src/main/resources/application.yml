@@ -1,0 +1,24 @@
+spring:
+  application:
+    name: eureka-feign-hystrix
+#重试机制开关,默认false
+#  cloud:
+#    loadbalancer:
+#      retry:
+#        enabled: true
+server:
+  port: 9500
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:9100/eureka/
+
+#断路器配置
+hystrix:
+  metrics:
+    enabled: true
+    #刷新间隔
+    polling-interval-ms: 2000
+
+
