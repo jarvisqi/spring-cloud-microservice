@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.RestController;
  * @date : 2018/6/25
  */
 @RestController
-public class HystrixController {
+public class FeignHystrixController {
     @Autowired
     private UserClient client;
 
@@ -23,8 +23,8 @@ public class HystrixController {
      * @return int
      */
     @HystrixCommand(fallbackMethod = "hystrixError")
-    @RequestMapping("/hystrix")
-    public String hystrix() {
+    @RequestMapping("/getHystrix")
+    public String getHystrix() {
         int result = client.addUser();
         return Integer.toString(result);
     }

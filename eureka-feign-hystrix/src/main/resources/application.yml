@@ -20,5 +20,11 @@ hystrix:
     enabled: true
     #刷新间隔
     polling-interval-ms: 2000
+#暴露 endpoints 给 hystrix-dashboard监控面板
+management:
+  endpoints:
+    web:
+      exposure:
+        include: hystrix.stream
 
 
