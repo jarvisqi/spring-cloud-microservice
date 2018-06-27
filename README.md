@@ -1,7 +1,7 @@
 # Spring-Cloud-Microservice
 Java : 1.8+   
 Spring Boot : 2.0.3.RELEASE   
-Spring Cloud : Finchley.Finchley.RELEASE     
+Spring Cloud : Finchley.RELEASE     
 
 
 # Using Components
