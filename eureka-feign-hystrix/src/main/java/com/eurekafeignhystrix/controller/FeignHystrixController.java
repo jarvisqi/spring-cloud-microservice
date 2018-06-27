@@ -19,12 +19,14 @@ public class FeignHystrixController {
 
     /**
      * 添加信息 服务失败跳转到 hystrixError
+     * HystrixCommand 注解在Feign中不需要使用
      *
      * @return int
      */
     @HystrixCommand(fallbackMethod = "hystrixError")
     @RequestMapping("/getHystrix")
     public String getHystrix() {
+        //addUser 会失败
         int result = client.addUser();
         return Integer.toString(result);
     }
@@ -35,7 +37,7 @@ public class FeignHystrixController {
      * @return string
      */
     public String hystrixError() {
-        return "Hystrix hystrix(): Service Unavailable";
+        return "FeignHystrix / hystrix(): Service Unavailable";
     }
 }
 

@@ -1,11 +1,7 @@
 spring:
   application:
     name: eureka-feign-hystrix
-#重试机制开关,默认false
-#  cloud:
-#    loadbalancer:
-#      retry:
-#        enabled: true
+
 server:
   port: 9500
 
@@ -14,7 +10,22 @@ eureka:
     service-url:
       defaultZone: http://localhost:9100/eureka/
 
-#断路器配置
+#开启断路器hystrix配置
+feign:
+  hystrix:
+    enabled: true
+#请求和响应GZIP压缩支持
+  compression:
+    request:
+      enabled: true
+      #支持压缩的mime types
+      mime-types: text/xml,application/xml,application/json
+      min-request-size: 2048
+    response:
+      enabled: true
+
+
+#断路器配置  使用@HystrixCommand配置
 hystrix:
   metrics:
     enabled: true
@@ -26,5 +37,11 @@ management:
     web:
       exposure:
         include: hystrix.stream
+logging:
+  level:
+    com:
+      eurekafeignhystrix:
+        service:
+          UserClient: debug
 
 

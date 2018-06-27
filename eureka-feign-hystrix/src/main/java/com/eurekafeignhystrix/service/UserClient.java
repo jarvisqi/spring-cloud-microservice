@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
  * feign 注解来绑定该接口对应user-service服务
  * name为其它服务的服务名称
  * fallback为熔断后的回调
+ * FeignClient fallback 和 HystrixCommand 方式二选一
  *
  * @author : Jarvis
  * @date : 2018/6/25

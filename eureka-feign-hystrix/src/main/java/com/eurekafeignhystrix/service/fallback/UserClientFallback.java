@@ -13,7 +13,7 @@ import org.springframework.stereotype.Component;
 public class UserClientFallback implements UserClient {
     @Override
     public String getUserInfo() {
-        return "User getUserInfo() : Service Unavailable";
+        return "User / getUserInfo() : Service Unavailable";
     }
 
     @Override
