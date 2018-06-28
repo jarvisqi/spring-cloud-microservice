@@ -1,0 +1,9 @@
+spring:
+  application:
+    name: turbine-amqp
+server:
+  port: 9260
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:9100/eureka/
