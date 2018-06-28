@@ -3,7 +3,7 @@ spring:
     name: eureka-ribbon
 
 server:
-  port: 9300
+  port: 9200
 
 eureka:
   client:
