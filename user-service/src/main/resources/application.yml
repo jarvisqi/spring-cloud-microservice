@@ -2,7 +2,7 @@ spring:
   application:
     name: user-service
 server:
-  port: 9200
+  port: 9100
 eureka:
   client:
     service-url:
