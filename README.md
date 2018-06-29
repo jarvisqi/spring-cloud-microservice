@@ -9,6 +9,7 @@ Spring Cloud : Finchley.RELEASE
 服务注册发现：Eureka Server,Eureka Client    
 服务消费负载均衡：Ribbon、Feign   
 服务容错保护（降级、隔离、熔断）：Hystrix、Hystrix-Dashboard      
+服务监控：Turbine,RabbitMQ 
 服务容网关：Zuul    
 
 # Use       
