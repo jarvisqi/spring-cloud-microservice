@@ -8,7 +8,7 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.web.client.RestTemplate;
 
 /**
- * spring cloud 负载均衡 ribbon 实现
+ * spring cloud 负载均衡,使用 ribbon 实现
  *
  * @author : Jarbibs
  * @date : 2018/06/25
