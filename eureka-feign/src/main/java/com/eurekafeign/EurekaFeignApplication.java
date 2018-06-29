@@ -6,7 +6,7 @@ import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 import org.springframework.cloud.openfeign.EnableFeignClients;
 
 /**
- * spring cloud 负载均衡 Feign 实现
+ * spring cloud 负载均衡，使用Feign 实现
  *
  * @author Jarvis
  * @date 2018/06/25
