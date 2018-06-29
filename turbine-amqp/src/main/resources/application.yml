@@ -1,9 +1,18 @@
 spring:
   application:
     name: turbine-amqp
+
+  rabbitmq:
+    addresses: 192.168.10.253
+    port: 15672
+    username: admin
+    password: 12345
+
+
 server:
   port: 9260
+
 eureka:
   client:
     service-url:
-      defaultZone: http://localhost:9100/eureka/
+      defaultZone: http://localhost:8080/eureka/

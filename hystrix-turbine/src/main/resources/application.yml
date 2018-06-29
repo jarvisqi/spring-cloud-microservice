@@ -2,16 +2,23 @@ spring:
   application:
     name: hystrix-turbine
 
+  rabbitmq:
+    addresses: 192.168.10.253
+    port: 15672
+    username: admin
+    password: 12345
+
 server:
   port: 9240
 
 management:
   server:
     port: 9250
+
 eureka:
   client:
     service-url:
-      defaultZone: http://localhost:9100/eureka/
+      defaultZone: http://localhost:8080/eureka/
 
 turbine:
   # 参数指定了需要收集监控信息的服务名；

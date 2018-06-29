@@ -1,8 +1,13 @@
 spring:
   application:
     name: eureka-server
+  cloud:
+    loadbalancer:
+      retry:
+        enabled: false
 server:
-  port: 9000
+  port: 8080
+
 eureka:
   instance:
     hostname: localhost
