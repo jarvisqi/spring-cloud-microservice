@@ -5,6 +5,8 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
 /**
+ * 设置日日之级别
+ *
  * @author : Jarvis
  * @date : 2018/6/27
  */
