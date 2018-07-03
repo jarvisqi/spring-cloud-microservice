@@ -8,7 +8,7 @@ spring:
           # 是否与服务发现组件进行结合,通过 serviceId 转发到具体的服务实例
           enabled: true
       routes:
-        # 网关路由到 USER-SERVICE 服务
+        # 网关路由到 USER-SERVICE 服务，使用 Spring Cloud Gateway的默认路由规则大写的serviceId/**
         - id: USER-SERVICE
           uri: lb://USER-SERVICE
           predicates:
