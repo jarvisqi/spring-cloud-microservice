@@ -28,7 +28,7 @@ java -jar user-service-0.0.1-SNAPSHOT.jar --server.port=9101
 7，启动hystrix-turbine：服务监控信息聚合，http://localhost:9240/turbine.stream ，服务监控信息  
 8，启动turbine-amqp：服务监控信息收集，使用RabbitMQ消息代理异步实现，http://localhost:9260  
 &emsp;&ensp;打开 http://localhost:9230/hystrix 界面输入：http://localhost:9240/turbine.stream 监控服务  
-
+9，启动api-gateway： 服务网关转发请求，http://localhost:9300/USER-SERVICE/** 请求User Service 
       
           
 
