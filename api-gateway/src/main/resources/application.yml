@@ -1,38 +1,1 @@
-spring:
-  application:
-    name: api-gateway
-  cloud:
-    gateway:
-      discovery:
-        locator:
-          # ÊÇ·ñÓë·şÎñ·¢ÏÖ×é¼ş½øĞĞ½áºÏ,Í¨¹ı serviceId ×ª·¢µ½¾ßÌåµÄ·şÎñÊµÀı
-          enabled: true
-      routes:
-        # Íø¹ØÂ·ÓÉµ½ USER-SERVICE ·şÎñ£¬Ê¹ÓÃ Spring Cloud GatewayµÄÄ¬ÈÏÂ·ÓÉ¹æÔò´óĞ´µÄserviceId/**
-        - id: USER-SERVICE
-          uri: lb://USER-SERVICE
-          predicates:
-          - Path=/USER-SERVICE/**
-
-server:
-  port: 9300
-
-management:
-  security:
-    enabled: false
-
-eureka:
-  client:
-    service-url:
-      defaultZone: http://localhost:8080/eureka/
-
-feign:
-  hystrix:
-    enabled: true
-
-logging:
-  level:
-    org.springframework.cloud.gateway: trace
-    org.springframework.http.server.reactive: debug
-    org.springframework.web.reactive: debug
-    reactor.ipc.netty: debug
+spring:  application:    name: api-gateway  cloud:    gateway:      discovery:        locator:        # æ˜¯å¦ä¸æœåŠ¡å‘ç°ç»„ä»¶è¿›è¡Œç»“åˆ,é€šè¿‡ serviceId è½¬å‘åˆ°å…·ä½“çš„æœåŠ¡å®ä¾‹          enabled: true      routes:        # ç½‘å…³è·¯ç”±åˆ° USER-SERVICE æœåŠ¡ï¼Œä½¿ç”¨ Spring Cloud Gatewayçš„é»˜è®¤è·¯ç”±è§„åˆ™å¤§å†™çš„serviceId/**        - id: USER-SERVICE          uri: lb://USER-SERVICE          predicates:          - Path=/USER-SERVICE/**server:  port: 9300management:  security:    enabled: falseeureka:  client:    service-url:      defaultZone: http://localhost:8080/eureka/feign:  hystrix:    enabled: truelogging:  level:    org.springframework.cloud.gateway: trace    org.springframework.http.server.reactive: debug    org.springframework.web.reactive: debug    reactor.ipc.netty: debug
