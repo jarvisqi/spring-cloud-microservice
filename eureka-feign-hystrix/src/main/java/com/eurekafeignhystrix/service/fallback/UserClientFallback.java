@@ -6,8 +6,8 @@ import org.springframework.stereotype.Component;
 /**
  * fallback
  *
- * @author : Jarvis
- * @date : 2018/6/25
+ * @author Jarvis
+ * @date 2018/6/25
  */
 @Component
 public class UserClientFallback implements UserClient {

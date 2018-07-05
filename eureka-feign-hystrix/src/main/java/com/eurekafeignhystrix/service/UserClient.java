@@ -12,8 +12,8 @@ import org.springframework.web.bind.annotation.RequestMethod;
  * fallback为熔断后的回调
  * FeignClient fallback 和 HystrixCommand 方式二选一
  *
- * @author : Jarvis
- * @date : 2018/6/25
+ * @author Jarvis
+ * @date 2018/6/25
  */
 @FeignClient(value = "user-service", fallback = UserClientFallback.class)
 public interface UserClient {

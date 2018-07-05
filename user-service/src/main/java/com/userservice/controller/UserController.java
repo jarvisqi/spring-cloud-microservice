@@ -6,8 +6,8 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 /**
- * @author : Jarvis
- * @date : 2018/6/25
+ * @author Jarvis
+ * @date 2018/6/25
  */
 @RestController
 public class UserController {

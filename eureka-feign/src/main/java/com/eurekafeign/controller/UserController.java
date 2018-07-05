@@ -8,8 +8,8 @@ import org.springframework.web.bind.annotation.RestController;
 /**
  * 调用feign 绑定的user-service 服务
  *
- * @author : Jarvis
- * @date : 2018/6/25
+ * @author Jarvis
+ * @date 2018/6/25
  */
 @RestController
 public class UserController {

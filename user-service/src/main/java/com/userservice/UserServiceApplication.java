@@ -7,8 +7,8 @@ import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
 /**
  * spring cloud user-service 服务
  *
- * @author : Jarvis
- * @date : 2018/06/25
+ * @author Jarvis
+ * @date 2018/06/25
  */
 @EnableEurekaClient
 @SpringBootApplication

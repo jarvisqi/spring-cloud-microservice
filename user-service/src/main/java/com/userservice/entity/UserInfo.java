@@ -4,8 +4,8 @@ package com.userservice.entity;
 /**
  * user 信息
  *
- * @author : Jarvis
- * @date : 2018/6/25
+ * @author Jarvis
+ * @date 2018/6/25
  */
 public class UserInfo {
 

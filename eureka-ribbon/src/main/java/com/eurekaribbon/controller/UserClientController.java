@@ -8,8 +8,8 @@ import org.springframework.web.client.RestTemplate;
 /**
  * user-service 负载均衡服务
  *
- * @author : Jarvis
- * @date : 2018/6/25
+ * @author Jarvis
+ * @date 2018/6/25
  */
 @RestController
 public class UserClientController {
