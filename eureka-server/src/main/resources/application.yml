@@ -7,11 +7,27 @@ server:
 
 eureka:
   instance:
+    #服务注册中心实例的主机名
     hostname: localhost
 
   client:
+    #是否向服务注册中心注册自己
     register-with-eureka: false
+    #是否检索服务
     fetch-registry: false
+    #服务注册中心的配置内容，指定服务注册中心的位置
     service-url:
       defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
 
+  server:
+    # 关闭自我保护
+    enable-self-preservation: false
+    #  清理无效的服务节点，清理间隔（单位毫秒，默认是60*1000）
+    eviction-interval-timer-in-ms: 4000
+
+logging:
+  level:
+    com:
+      netflix:
+        eureka: OFF
+        discovery: OFF
