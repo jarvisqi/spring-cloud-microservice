@@ -10,9 +10,9 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
  * @date 2018/07/11
  */
 @SpringBootApplication
-public class SecurityAuth2Application {
+public class SecurityOauth2Application {
 
     public static void main(String[] args) {
-        SpringApplication.run(SecurityAuth2Application.class, args);
+        SpringApplication.run(SecurityOauth2Application.class, args);
     }
 }
