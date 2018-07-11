@@ -1,9 +1,13 @@
 package com.securityoauth2.service.impl;
 
 import com.securityoauth2.entity.AuthUser;
+import com.securityoauth2.entity.RoleInfo;
 import com.securityoauth2.service.AuthUserService;
+import com.securityoauth2.service.RoleService;
+import com.sun.xml.internal.bind.v2.TODO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.GrantedAuthority;
+import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.User;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
@@ -11,6 +15,7 @@ import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
 /**
@@ -23,6 +28,9 @@ public class UserDetailsServiceImpl implements UserDetailsService {
     @Autowired
     private AuthUserService userService;
 
+    @Autowired
+    private RoleService roleService;
+
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
         AuthUser authUser = userService.findByUsername(username);
@@ -32,6 +40,17 @@ public class UserDetailsServiceImpl implements UserDetailsService {
         //权限点
         Set<GrantedAuthority> grantedAuthorities = new HashSet<>();
 
+        List<RoleInfo> roleResult = roleService.getRoleByUserId(authUser.getId());
+        if (roleResult != null) {
+            for (RoleInfo role : roleResult) {
+                //角色必须是ROLE_开头，可以在数据库中设置
+                GrantedAuthority grantedAuthority = new SimpleGrantedAuthority("ROLE_" + role.getValue());
+                grantedAuthorities.add(grantedAuthority);
+                //获取权限
+                //TODO
+
+            }
+        }
 
         /**
          *  boolean enabled = true;  可用性 :true:可用 false:不可用
