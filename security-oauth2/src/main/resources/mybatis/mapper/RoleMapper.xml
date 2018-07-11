@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.securityoauth2.service.RoleService">
+
+    <resultMap id="roleMap" type="com.securityoauth2.entity.RoleInfo">
+        <id property="id" column="ID"/>
+        <result property="name" column="name"/>
+        <result property="value" column="value"/>
+    </resultMap>
+
+    <select id="getRoleByUserId" parameterType="String" resultMap="roleMap">
+        SELECT *
+        FROM auth_role
+        WHERE user_id= #{userId}
+    </select>
+
+</mapper>

@@ -1,0 +1,21 @@
+spring:
+  application:
+    name: security-oauth2
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://192.168.10.252:3306/spring?useSSL=false
+    username: test
+    password: 123456
+  redis:
+    host: 192.168.10.252
+    port: 6379
+    password: 123456
+
+server:
+  port: 9400
+
+security:
+  oauth2:
+    resource:
+      # user-info-uri是对应网关地址
+      user-info-uri: http://localhost:9300/
