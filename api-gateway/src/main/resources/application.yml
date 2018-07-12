@@ -17,16 +17,6 @@ spring:
 server:
   port: 9300
 
-
-eureka:
-  client:
-    service-url:
-      defaultZone: http://localhost:8080/eureka/
-
-feign:
-  hystrix:
-    enabled: true
-
 logging:
   level:
     org.springframework.cloud.gateway: trace
@@ -37,5 +27,6 @@ logging:
 security:
   oauth2:
     resource:
-      user-info-uri: http://localhost:9400/USER-SERVICE
-      prefer-token-info: false
+      id: api-gateway
+#      user-info-uri: http://localhost:9400/USER-SERVICE
+#      prefer-token-info: false

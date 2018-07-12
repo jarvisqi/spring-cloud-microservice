@@ -3,11 +3,11 @@ spring:
     name: security-oauth2
   datasource:
     driver-class-name: com.mysql.jdbc.Driver
-    url: jdbc:mysql://192.168.10.252:3306/spring?useSSL=false
+    url: jdbc:mysql://192.168.10.253:3306/spring?useSSL=false
     username: test
     password: 123456
   redis:
-    host: 192.168.10.252
+    host: 192.168.10.253
     port: 6379
     password: 123456
 
