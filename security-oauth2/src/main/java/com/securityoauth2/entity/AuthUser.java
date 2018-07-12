@@ -13,6 +13,8 @@ public class AuthUser implements Serializable {
     private static final long serialVersionUID = -8577562083364859404L;
 
     private Integer id;
+    private String username;
+    private String password;
 
     public Integer getId() {
         return id;
@@ -38,6 +40,5 @@ public class AuthUser implements Serializable {
         this.password = password;
     }
 
-    private String username;
-    private String password;
+
 }

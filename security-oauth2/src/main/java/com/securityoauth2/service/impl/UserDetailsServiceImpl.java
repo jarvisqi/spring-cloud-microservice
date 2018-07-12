@@ -1,9 +1,9 @@
 package com.securityoauth2.service.impl;
 
 import com.securityoauth2.entity.AuthUser;
-import com.securityoauth2.entity.RoleInfo;
+import com.securityoauth2.entity.AuthRole;
 import com.securityoauth2.service.AuthUserService;
-import com.securityoauth2.service.RoleService;
+import com.securityoauth2.service.AuthRoleService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
@@ -28,7 +28,7 @@ public class UserDetailsServiceImpl implements UserDetailsService {
     private AuthUserService userService;
 
     @Autowired
-    private RoleService roleService;
+    private AuthRoleService roleService;
 
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
@@ -39,9 +39,9 @@ public class UserDetailsServiceImpl implements UserDetailsService {
         //权限点
         Set<GrantedAuthority> grantedAuthorities = new HashSet<>();
 
-        List<RoleInfo> roleResult = roleService.getRoleByUserId(authUser.getId());
+        List<AuthRole> roleResult = roleService.getRoleByUserId(authUser.getId());
         if (roleResult != null) {
-            for (RoleInfo role : roleResult) {
+            for (AuthRole role : roleResult) {
                 //角色必须是ROLE_开头，可以在数据库中设置
                 GrantedAuthority grantedAuthority = new SimpleGrantedAuthority("ROLE_" + role.getValue());
                 grantedAuthorities.add(grantedAuthority);

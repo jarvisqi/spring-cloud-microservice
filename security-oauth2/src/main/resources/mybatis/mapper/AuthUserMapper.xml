@@ -3,13 +3,13 @@
 <mapper namespace="com.securityoauth2.service.AuthUserService">
 
     <resultMap id="authUserMap" type="com.securityoauth2.entity.AuthUser">
-        <id property="id" column="ID"/>
+        <id property="id" column="id"/>
         <result property="username" column="user_name"/>
         <result property="password" column="password"/>
     </resultMap>
 
     <select id="findByUsername" parameterType="String" resultMap="authUserMap">
-        SELECT *
+        SELECT id,user_name,password
         FROM auth_user
         WHERE user_name= #{username}
     </select>

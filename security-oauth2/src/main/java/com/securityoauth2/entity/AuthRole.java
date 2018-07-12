@@ -8,7 +8,7 @@ import java.io.Serializable;
  * @author Jarvis
  * @date 2018/7/11
  */
-public class RoleInfo implements Serializable {
+public class AuthRole implements Serializable {
 
     private static final long serialVersionUID = 6646946827613553839L;
     private Integer id;
