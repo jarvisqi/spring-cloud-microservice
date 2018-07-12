@@ -7,11 +7,11 @@
         <result property="code" column="code"/>
         <result property="parentCode" column="parent_code"/>
         <result property="parentId" column="parent_id"/>
-        <result property="name" column="name"/>
+        <result property="resourceUrl" column="resource_url"/>
     </resultMap>
 
     <sql id="Base_Columns">
-        id, code, parent_code, parent_id, `name`
+        id, code, parent_code, parent_id, resource_url
     </sql>
 
     <select id="getRolePermission" resultMap="resourceMap">

@@ -14,12 +14,6 @@ spring:
 server:
   port: 9400
 
-security:
-  oauth2:
-    resource:
-      # user-info-uri是对应网关地址
-      user-info-uri: http://localhost:9300/USER-SERVICE
-
 eureka:
   client:
     service-url:

@@ -11,18 +11,19 @@ import java.io.Serializable;
 public class AuthResource implements Serializable {
 
     private static final long serialVersionUID = -4177172273636348827L;
-    
-    private String id;
+
+    private Integer id;
     private String code;
     private String parentCode;
     private String parentId;
-    private String name;
+    private String resourceUrl;
+    private Integer status;
 
-    public String getId() {
+    public Integer getId() {
         return id;
     }
 
-    public void setId(String id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 
@@ -51,21 +52,19 @@ public class AuthResource implements Serializable {
     }
 
     public String getName() {
-        return name;
+        return resourceUrl;
     }
 
     public void setName(String name) {
-        this.name = name;
+        this.resourceUrl = name;
     }
 
-    public String getUrl() {
-        return url;
+    public Integer getStatus() {
+        return status;
     }
 
-    public void setUrl(String url) {
-        this.url = url;
+    public void setStatus(Integer status) {
+        this.status = status;
     }
-
-    private String url;
 
 }
