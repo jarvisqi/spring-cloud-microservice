@@ -3,6 +3,7 @@ package com.apigateway;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
+import org.springframework.security.config.annotation.method.configuration.EnableGlobalMethodSecurity;
 
 /**
  * spring cloud 服务网关 api-gateway
@@ -10,6 +11,7 @@ import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
  * @author Jarvis
  * @date 2018/07/03
  */
+@EnableGlobalMethodSecurity(prePostEnabled = true)
 @EnableEurekaClient
 @SpringBootApplication
 public class ApiGatewayApplication {
