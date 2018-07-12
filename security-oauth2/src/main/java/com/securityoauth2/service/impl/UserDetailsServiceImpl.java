@@ -4,7 +4,6 @@ import com.securityoauth2.entity.AuthUser;
 import com.securityoauth2.entity.RoleInfo;
 import com.securityoauth2.service.AuthUserService;
 import com.securityoauth2.service.RoleService;
-import com.sun.xml.internal.bind.v2.TODO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
