@@ -4,7 +4,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.eureka-feign</groupId>
-    <artifactId>com.github.spring-micro</artifactId>
+    <artifactId>eureka-feign</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <packaging>jar</packaging>
 
