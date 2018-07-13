@@ -3,6 +3,7 @@ package com.zuulgateway.filter;
 import com.netflix.zuul.ZuulFilter;
 import com.netflix.zuul.context.RequestContext;
 import org.apache.http.HttpStatus;
+import org.springframework.stereotype.Component;
 
 import javax.servlet.http.HttpServletRequest;
 
@@ -12,6 +13,7 @@ import javax.servlet.http.HttpServletRequest;
  * @author Jarvis
  * @date 2018/7/13
  */
+@Component
 public class GatewayFilter extends ZuulFilter {
     /**
      * 过滤器的类型，它决定过滤器在请求的哪个生命周期中执行。
@@ -61,7 +63,7 @@ public class GatewayFilter extends ZuulFilter {
         if (token == null || token.isEmpty()) {
             context.setSendZuulResponse(false);
             context.setResponseStatusCode(HttpStatus.SC_UNAUTHORIZED);
-            context.setResponseBody("token 无效");
+            context.setResponseBody("token invalid");
         }
         return null;
     }
