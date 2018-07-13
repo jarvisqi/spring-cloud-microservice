@@ -11,13 +11,16 @@ eureka:
       defaultZone: http://localhost:8080/eureka/
 
 zuul:
-  # 前缀 版本号
   prefix: /v1
   routes:
     # http://localhost:9310/v1/user/
+    # user Api
     user-api:
       path: /user/**
-      # 服务id
+      serviceId: user-service
+    # order Api
+    order-api:
+      path: /order/**
       serviceId: user-service
 
 logging:
