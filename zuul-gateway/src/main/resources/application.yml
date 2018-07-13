@@ -1,0 +1,27 @@
+spring:
+  application:
+    name: zuul-gateway
+
+server:
+  port: 9310
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8080/eureka/
+
+zuul:
+  # 前缀 版本号
+  prefix: /v1
+  routes:
+    # http://localhost:9310/v1/user/
+    user-api:
+      path: /user/**
+      # 服务id
+      serviceId: user-service
+
+logging:
+  level:
+    org.springframework.http.server.reactive: debug
+    org.springframework.web.reactive: debug
+    reactor.ipc.netty: debug
