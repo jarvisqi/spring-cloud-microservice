@@ -17,7 +17,7 @@ public class UserController {
 
     @RequestMapping(value = "/getUser", method = RequestMethod.GET)
     public String getUser() {
-        return "Success, Spring Cloud Service, Port :" + port;
+        return "Success, User-Service, Port :" + port;
     }
 
 }
