@@ -10,7 +10,6 @@ eureka:
     #在此指定服务注册中心地址
     service-url:
       defaultZone: http://localhost:8080/eureka/
-
   client:
     # 开启健康检查（需要spring-boot-starter-actuator依赖）
     healthcheck:
