@@ -9,10 +9,10 @@ spring:
           enabled: true
       routes:
           #网关路由USER-SERVICE服务,使用 Spring Cloud Gateway的默认路由规则大写的serviceId/**
-        - id: USER-SERVICE
-          uri: lb://USER-SERVICE
+        - id: user-service
+          uri: lb://user-service
           predicates:
-          - Path=/USER-SERVICE/**
+          - Path=/user-service/**
 
 server:
   port: 9300
