@@ -1,6 +1,6 @@
 spring:
   application:
-    name: api-gateway
+    name: cloud-gateway
   cloud:
     gateway:
       discovery:
@@ -23,10 +23,3 @@ logging:
     org.springframework.http.server.reactive: debug
     org.springframework.web.reactive: debug
     reactor.ipc.netty: debug
-
-security:
-  oauth2:
-    resource:
-      id: api-gateway
-#      user-info-uri: http://localhost:9400/USER-SERVICE
-#      prefer-token-info: false

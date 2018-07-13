@@ -1,4 +1,4 @@
-package com.apigateway;
+package com.cloudgateway;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -10,9 +10,9 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
  * @date 2018/07/03
  */
 @SpringBootApplication
-public class ApiGatewayApplication {
+public class CloudGatewayApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(ApiGatewayApplication.class, args);
+        SpringApplication.run(CloudGatewayApplication.class, args);
     }
 }
