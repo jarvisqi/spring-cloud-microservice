@@ -8,14 +8,39 @@ spring:
           #服务发现组件结合,通过 serviceId 转发到具体的服务实例
           enabled: true
       routes:
-          #网关路由USER-SERVICE服务,使用 Spring Cloud Gateway的默认路由规则大写的serviceId/**
-        - id: user-service
-          uri: lb://user-service
+        #自定义路由
+        - id: user-api
+          uri: lb://USER-SERVICE
+          order: 1001
           predicates:
-          - Path=/user-service/**
+            - Path=/user/**
+          filters:
+            # 必须加上StripPrefix=1
+            - StripPrefix=1
+
+        - id: order-api
+          uri: lb://ORDER-SERVICE
+          order: 1002
+          predicates:
+            - Path=/order/**
+          filters:
+            - StripPrefix=1
+
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8080/eureka/
 
 server:
   port: 9300
+
+#开启actuator管理api，后面要关闭
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
 
 logging:
   level:
