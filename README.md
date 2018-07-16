@@ -10,7 +10,7 @@ Spring Cloud : Finchley.RELEASE
 服务消费负载均衡：Ribbon、Feign   
 服务容错保护（降级、隔离、熔断）：Hystrix、Hystrix-Dashboard      
 服务监控：Turbine,RabbitMQ       
-服务容网关：Spring-Cloud-Gateway    
+服务容网关：Spring-Cloud-Gateway,Netflix-Zuul    
 
 # Use       
 1，启动eureka-server 服务注册中心，http://localhost:8080      
@@ -19,6 +19,8 @@ Spring Cloud : Finchley.RELEASE
 ```jshelllanguage
 java -jar user-service-0.0.1-SNAPSHOT.jar --server.port=9100     
 java -jar user-service-0.0.1-SNAPSHOT.jar --server.port=9101  
+java -jar order-service-0.0.1-SNAPSHOT.jar --server.port=9120     
+java -jar order-service-0.0.1-SNAPSHOT.jar --server.port=9121  
 ```
 3，启动eureka-ribbon: ribbon服务负载均衡，http://localhost:9200        
 4，启动eureka-feign: feign服务负载均衡，http://localhost:9210       
@@ -28,7 +30,13 @@ java -jar user-service-0.0.1-SNAPSHOT.jar --server.port=9101
 7，启动hystrix-turbine：服务监控信息聚合，http://localhost:9240/turbine.stream ，服务监控信息  
 8，启动turbine-amqp：服务监控信息收集，使用RabbitMQ消息代理异步实现，http://localhost:9260  
 &emsp;&ensp;打开 http://localhost:9230/hystrix 界面输入：http://localhost:9240/turbine.stream 监控服务  
-9，启动api-gateway： 服务网关转发请求，http://localhost:9300/USER-SERVICE/** 请求User Service 
+9，启动cloud-gateway： 服务网关转发请求:  
+&emsp;&ensp;http://localhost:9300/user/**,请求User-Service  
+&emsp;&ensp;http://localhost:9300/order/**,请求Order-Service         
+10,启动zuul-gateway: 服务网关转发请求:  
+&emsp;&ensp;http://localhost:9310/v1/user/**,请求User-Service  
+&emsp;&ensp;http://localhost:9310/v1/order/**,请求Order-Service    
+
       
           
 
