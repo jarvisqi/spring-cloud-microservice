@@ -21,7 +21,7 @@ zuul:
     # order Api
     order-api:
       path: /order/**
-      serviceId: user-service
+      serviceId: order-service
 
 logging:
   level:
