@@ -19,6 +19,7 @@ Spring Cloud : Finchley.RELEASE
 ```jshelllanguage
 java -jar user-service-0.0.1-SNAPSHOT.jar --server.port=9100     
 java -jar user-service-0.0.1-SNAPSHOT.jar --server.port=9101  
+
 java -jar order-service-0.0.1-SNAPSHOT.jar --server.port=9120     
 java -jar order-service-0.0.1-SNAPSHOT.jar --server.port=9121  
 ```
@@ -31,6 +32,7 @@ java -jar order-service-0.0.1-SNAPSHOT.jar --server.port=9121
 8，启动turbine-amqp：服务监控信息收集，使用RabbitMQ消息代理异步实现，http://localhost:9260  
 &emsp;&ensp;打开 http://localhost:9230/hystrix 界面输入：http://localhost:9240/turbine.stream 监控服务  
 9，启动cloud-gateway： 服务网关转发请求:  
+&emsp;&ensp;http://localhost:9300/actuator/gateway/routes/,查看所有Api路由信息
 &emsp;&ensp;http://localhost:9300/user/**,请求User-Service  
 &emsp;&ensp;http://localhost:9300/order/**,请求Order-Service         
 10,启动zuul-gateway: 服务网关转发请求:  
