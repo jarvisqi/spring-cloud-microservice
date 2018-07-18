@@ -1,6 +1,23 @@
 spring:
   application:
     name: order-service
+  sleuth:
+    web:
+      client:
+        enabled: true
+    sampler:
+      probability: 1.0
+  zipkin:
+    base-url: http://192.168.10.253:9411/
+    enabled: true
+    sender:
+      type: rabbit
+  rabbitmq:
+    addresses: 192.168.10.253
+    port: 15672
+    username: admin
+    password: 12345
+    virtual-host: test
 
 server:
   port: 9120
