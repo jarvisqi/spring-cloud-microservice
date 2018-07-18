@@ -86,7 +86,7 @@ zipkin:  java -jar zipkin.jar --RABBIT_ADDRESSES=localhost:5672 --RABBIT_USER=ad
     password: 12345
     virtual-host: test
 ``` 
-&emsp;&ensp;5、在浏览器输入： http://192.168.10.253:9411/zipkin/ 查看 trace信息
+&emsp;&ensp;5、http://192.168.10.253:9411/zipkin/ ，查看所有的 trace信息
 
 
 
