@@ -39,7 +39,7 @@ java -jar order-service-0.0.1-SNAPSHOT.jar --server.port=9121
 &emsp;&ensp;http://localhost:9310/v1/user/**,请求User-Service  
 &emsp;&ensp;http://localhost:9310/v1/order/**,请求Order-Service  
 11，spring cloud sleuth 服务链路追踪  
-&emsp;&ensp;1、Centos7 安装 zipkin服务端，<font color="#660000">注意：Zipkin 不再推荐我们来自定义 Server 端了，网上的各种教程基本都是之前版本的，基本都数互相抄的，请无视之。。</font>        
+&emsp;&ensp;1、Centos7 安装 zipkin服务端，`注意：Zipkin 不再推荐我们来自定义 Server 端了，网上的各种教程基本都是之前版本的，基本都数互相抄的，请无视`      
 &emsp;&ensp;2、使用命令启动 :  
 ```jshelllanguage
 # 通过环境变量让 Zipkin 从 RabbitMQ 中读取信息，就像这样：  
