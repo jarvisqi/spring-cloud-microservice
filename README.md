@@ -10,7 +10,8 @@ Spring Cloud : Finchley.RELEASE
 服务消费负载均衡：Ribbon、Feign   
 服务容错保护（降级、隔离、熔断）：Hystrix、Hystrix-Dashboard      
 服务监控：Turbine,RabbitMQ       
-服务容网关：Spring-Cloud-Gateway,Netflix-Zuul    
+服务容网关：Spring-Cloud-Gateway,Netflix-Zuul   
+服务容链路追踪：Spring-Cloud-Sleuth、Zipkin(聚合系统调用数据)、RabbitMQ(系统调用数据传输)、 Elasticsearch(系统调用数据持久化)
 
 # Use       
 1，启动eureka-server 服务注册中心，http://localhost:8080      
@@ -61,7 +62,7 @@ java -jar zipkin.jar --RABBIT_URI=amqp://admin:12345@localhost:5672/sleuth
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-zipkin</artifactId>
         </dependency>
-        <!--服务链路通讯-->
+        <!--数据传输-->
         <dependency>
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-stream-binder-rabbit</artifactId>
@@ -95,13 +96,13 @@ java -jar zipkin.jar --RABBIT_URI=amqp://admin:12345@localhost:5672/sleuth
 &emsp;&ensp;6、将服务追踪trace信息持久化到 Elasticsearch
 >>>1、安装Elasticsearch,并启动 http://192.168.10.100:9200/            
 >>>2、安装Elasticsearch-head，并启动  http://192.168.10.100:9100/        
->>>3、重新启动 Zipkin 服务，并指定存储方式为 Elasticsearch，链路通讯是 RabbitMQ，启动命令如下：
+>>>3、重新启动 Zipkin 服务，并指定存储方式为 Elasticsearch，数据传输是 RabbitMQ，启动命令如下：
 ```jshelllanguage
 java -jar zipkin.jar --RABBIT_URI=amqp://admin:12345@localhost:5672/sleuth --STORAGE_TYPE=elasticsearch --ES_HOSTS=http/localhost:9200 --ES_HTTP_LOGGING=BASIC
 
 前面是指定用 RabbitMQ,后面是指定存储方式 Elasticsearch
 ``` 
->>>4、zuul-gateway -> order-service -> user-service 形成调用链路，请求的数据就会存储在 Elasticsearch 中，浏览数据可查看  
+>>>4、zuul-gateway -> order-service -> user-service 形成调用链路，请求的数据使用RabbitMQ传输并存储在 Elasticsearch 中，浏览数据可查看  
 
 
 
