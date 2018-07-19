@@ -42,8 +42,13 @@ java -jar order-service-0.0.1-SNAPSHOT.jar --server.port=9121
 &emsp;&ensp;1、Centos7 安装 zipkin服务端，`注意：Zipkin 不再推荐我们来自定义 Server 端了，网上的各种教程基本都是之前版本的，基本都数互相抄的，请无视`      
 &emsp;&ensp;2、使用命令启动 :  
 ```jshelllanguage
-# 通过环境变量让 Zipkin 从 RabbitMQ 中读取信息，就像这样：  
-zipkin:  java -jar zipkin.jar --RABBIT_ADDRESSES=localhost:5672 --RABBIT_USER=admin --RABBIT_PASSWORD=12345 --RABBIT_VIRTUAL_HOST=test 
+# 通过环境变量让 Zipkin 从 RabbitMQ 中读取信息，如下：  
+java -jar zipkin.jar --RABBIT_ADDRESSES=localhost:5672 --RABBIT_USER=admin --RABBIT_PASSWORD=12345 --RABBIT_VIRTUAL_HOST=sleuth 
+
+or
+
+java -jar zipkin.jar --RABBIT_URI=amqp://admin:12345@localhost:5672/sleuth
+
 ``` 
 &emsp;&ensp;3、user-service,order-service,zuul-gateway 添加依赖：    
 ```jshelllanguage
@@ -84,7 +89,7 @@ zipkin:  java -jar zipkin.jar --RABBIT_ADDRESSES=localhost:5672 --RABBIT_USER=ad
     port: 15672
     username: admin
     password: 12345
-    virtual-host: test
+    virtual-host: sleuth
 ``` 
 &emsp;&ensp;5、http://192.168.10.100:9411/zipkin/ ，查看所有的 trace信息
 
