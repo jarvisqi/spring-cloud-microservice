@@ -17,7 +17,7 @@ spring:
     port: 15672
     username: admin
     password: 12345
-    virtual-host: test
+    virtual-host: sleuth
 
 server:
   port: 9310
