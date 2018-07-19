@@ -91,7 +91,23 @@ java -jar zipkin.jar --RABBIT_URI=amqp://admin:12345@localhost:5672/sleuth
     password: 12345
     virtual-host: sleuth
 ``` 
-&emsp;&ensp;5、http://192.168.10.100:9411/zipkin/ ，查看所有的 trace信息
+&emsp;&ensp;5、http://192.168.10.100:9411/zipkin/ ，查看所有的 trace信息   
+&emsp;&ensp;6、将服务追踪trace信息持久化到 Elasticsearch
+>>>1、安装Elasticsearch,并启动 http://192.168.10.100:9200/            
+>>>2、安装Elasticsearch-head，并启动  http://192.168.10.100:9100/        
+>>>3、重新启动 Zipkin 服务，并指定存储方式为 Elasticsearch，链路通讯是 RabbitMQ，启动命令如下：
+```jshelllanguage
+java -jar zipkin.jar --RABBIT_URI=amqp://admin:12345@localhost:5672/sleuth --STORAGE_TYPE=elasticsearch --ES_HOSTS=http/localhost:9200 --ES_HTTP_LOGGING=BASIC
+
+前面是指定用 RabbitMQ,后面是指定存储方式 Elasticsearch
+``` 
+>>>4、zuul-gateway -> order-service -> user-service 形成调用链路，请求的数据就会存储在 Elasticsearch 中，浏览数据可查看  
+
+
+
+
+
+
 
 
 
