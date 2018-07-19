@@ -2,7 +2,7 @@ spring:
   application:
     name: hystrix-turbine
   rabbitmq:
-    addresses: 192.168.10.253
+    addresses: 192.168.10.100
     port: 15672
     username: admin
     password: 12345
