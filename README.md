@@ -75,18 +75,18 @@ zipkin:  java -jar zipkin.jar --RABBIT_ADDRESSES=localhost:5672 --RABBIT_USER=ad
       probability: 1.0
   # 指定 zipkin 服务器的地址
   zipkin:
-    base-url: http://192.168.10.253:9411/
+    base-url: http://192.168.10.100:9411/
     enabled: true
     sender:
       type: rabbit
   rabbitmq:
-    addresses: 192.168.10.253
+    addresses: 192.168.10.100
     port: 15672
     username: admin
     password: 12345
     virtual-host: test
 ``` 
-&emsp;&ensp;5、http://192.168.10.253:9411/zipkin/ ，查看所有的 trace信息
+&emsp;&ensp;5、http://192.168.10.100:9411/zipkin/ ，查看所有的 trace信息
 
 
 
