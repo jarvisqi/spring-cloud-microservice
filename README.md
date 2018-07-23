@@ -103,8 +103,9 @@ java -jar zipkin.jar --RABBIT_URI=amqp://admin:12345@localhost:5672/sleuth --STO
 前面是指定用 RabbitMQ,后面是指定存储方式 Elasticsearch
 ``` 
 >>>4、zuul-gateway -> order-service -> user-service 形成调用链路，请求的数据使用RabbitMQ传输并存储在 Elasticsearch 中，浏览数据可查看  
-6、使用 Kibana 查看分析 Elasticsearch存数的数据，http://192.168.10.100:5601，不需任何代码，安装 Kibana 配置下Elasticsearch地址即可
-6、搭建ELK日志分析系统，安装配置 Logstash,直接使用以上的 Elasticsearch和 Kibana,Logstash的配置如下：  
+6、使用 Kibana 查看分析 Elasticsearch存数的数据，http://192.168.10.100:5601，不需任何代码，安装 Kibana 配置下Elasticsearch地址即可  
+
+7、搭建ELK日志分析系统，安装配置 Logstash,直接使用以上的 Elasticsearch和 Kibana, Logstash的配置如下：  
 ```jshelllanguage
 input {
   tcp {
