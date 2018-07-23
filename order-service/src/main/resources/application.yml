@@ -34,4 +34,7 @@ eureka:
     lease-renewal-interval-in-seconds: 10
 
 
+logging:
+  config: classpath:logback-spring.xml
+
 
