@@ -1,17 +1,18 @@
-# Spring-Cloud-Microservice
-Java : 1.8+   
-Spring Boot : 2.0.3.RELEASE   
-Spring Cloud : Finchley.RELEASE     
+# Environment
++ Java : 1.8+   
++ Spring Boot : 2.0.3.RELEASE   
++ Spring Cloud : Finchley.RELEASE     
 
 
-# Using Components
+# Components
 
-服务注册发现：Eureka Server,Eureka Client    
-服务消费负载均衡：Ribbon、Feign   
-服务容错保护（降级、隔离、熔断）：Hystrix、Hystrix-Dashboard      
-服务监控：Turbine,RabbitMQ       
-服务容网关：Spring-Cloud-Gateway,Netflix-Zuul   
-服务容链路追踪：Spring-Cloud-Sleuth、Zipkin(聚合系统调用数据)、RabbitMQ(系统调用数据传输)、 Elasticsearch(系统调用数据持久化)
+- 服务注册发现：Eureka Server,Eureka Client    
+- 服务消费负载均衡：Ribbon、Feign   
+- 服务容错保护（降级、隔离、熔断）：Hystrix、Hystrix-Dashboard      
+- 服务监控：Turbine,RabbitMQ       
+- 服务网关：Spring-Cloud-Gateway,Netflix-Zuul   
+- 服务链路追踪：Spring-Cloud-Sleuth、Zipkin(聚合系统调用数据)、RabbitMQ(系统调用数据传输)、 Elasticsearch(系统调用数据持久化)、Kibana(分析和可视化平台)  
+- 日志分析系统：Logstash、Elasticsearch、Kibana
 
 # Use       
 1，启动eureka-server 服务注册中心，http://localhost:8080      
