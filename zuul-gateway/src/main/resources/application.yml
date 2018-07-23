@@ -41,5 +41,5 @@ zuul:
       serviceId: order-service
 
 logging:
-  level:
-    com.netflix: debug
+  config: classpath:logback-spring.xml
+  level: debug
