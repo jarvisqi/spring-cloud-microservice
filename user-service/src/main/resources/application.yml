@@ -36,4 +36,7 @@ eureka:
     #续约更新时间间隔（默认30秒）
     lease-renewal-interval-in-seconds: 10
 
+logging:
+  config: classpath:logback-spring.xml
+
 
