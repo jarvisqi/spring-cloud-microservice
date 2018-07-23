@@ -15,8 +15,8 @@
 - 日志分析系统：Logstash、Elasticsearch、Kibana
 
 # Use       
-1，启动eureka-server 服务注册中心，http://localhost:8080      
-2，启动user-service 服务，http://localhost:9100,http://localhost:9101     
+1、启动eureka-server 服务注册中心，http://localhost:8080      
+2、启动user-service 服务，http://localhost:9100,http://localhost:9101     
 &emsp; 启动两个服务，用于测试负载均衡功能，启动命令：  
 ```jshelllanguage
 java -jar user-service-0.0.1-SNAPSHOT.jar --server.port=9100     
@@ -25,22 +25,22 @@ java -jar user-service-0.0.1-SNAPSHOT.jar --server.port=9101
 java -jar order-service-0.0.1-SNAPSHOT.jar --server.port=9120     
 java -jar order-service-0.0.1-SNAPSHOT.jar --server.port=9121  
 ```
-3，启动eureka-ribbon: ribbon服务负载均衡，http://localhost:9200        
-4，启动eureka-feign: feign服务负载均衡，http://localhost:9210       
-5，启动eureka-feign-hystrix: feign+hystrix服务容错，http://localhost:9220   
-6，启动hystrix-dashboard： 服务容错仪表盘监控，http://localhost:9230   
+3、启动eureka-ribbon: ribbon服务负载均衡，http://localhost:9200        
+4、启动eureka-feign: feign服务负载均衡，http://localhost:9210       
+5、启动eureka-feign-hystrix: feign+hystrix服务容错，http://localhost:9220   
+6、启动hystrix-dashboard： 服务容错仪表盘监控，http://localhost:9230   
 &emsp;&ensp;在hystrix-dashboard 界面输入： http://localhost:9220/actuator/hystrix.stream 监控服务  
-7，启动hystrix-turbine：服务监控信息聚合，http://localhost:9240/turbine.stream ，服务监控信息  
-8，启动turbine-amqp：服务监控信息收集，使用RabbitMQ消息代理异步实现，http://localhost:9260  
+7、启动hystrix-turbine：服务监控信息聚合，http://localhost:9240/turbine.stream ，服务监控信息  
+8、启动turbine-amqp：服务监控信息收集，使用RabbitMQ消息代理异步实现，http://localhost:9260  
 &emsp;&ensp;打开 http://localhost:9230/hystrix 界面输入：http://localhost:9240/turbine.stream 监控服务  
-9，启动cloud-gateway： 服务网关转发请求:  
+9、启动cloud-gateway： 服务网关转发请求:  
 &emsp;&ensp;http://localhost:9300/actuator/gateway/routes/,查看所有Api路由信息  
 &emsp;&ensp;http://localhost:9300/user/**,请求User-Service  
 &emsp;&ensp;http://localhost:9300/order/**,请求Order-Service         
-10,启动zuul-gateway: 服务网关转发请求:  
+10、启动zuul-gateway: 服务网关转发请求:  
 &emsp;&ensp;http://localhost:9310/v1/user/**,请求User-Service  
 &emsp;&ensp;http://localhost:9310/v1/order/**,请求Order-Service  
-11，spring cloud sleuth 服务链路追踪  
+11、spring cloud sleuth 服务链路追踪  
 &emsp;&ensp;1、Centos7 安装 zipkin服务端，`注意：Zipkin 不再推荐我们来自定义 Server 端了，网上的各种教程基本都是之前版本的，基本都数互相抄的，请无视`      
 &emsp;&ensp;2、使用命令启动 :  
 ```jshelllanguage
@@ -106,7 +106,7 @@ java -jar zipkin.jar --RABBIT_URI=amqp://admin:12345@localhost:5672/sleuth --STO
 >>>4、zuul-gateway -> order-service -> user-service 形成调用链路，请求的数据使用RabbitMQ传输并存储在 Elasticsearch 中，浏览数据可查看  
 6、使用 Kibana 查看分析 Elasticsearch存数的数据，http://192.168.10.100:5601，不需任何代码，安装 Kibana 配置下Elasticsearch地址即可  
 
-7、搭建ELK日志分析系统，安装配置 Logstash,直接使用以上的 Elasticsearch和 Kibana, Logstash的配置如下：  
+12、搭建ELK日志分析系统，安装配置 Logstash,直接使用以上的 Elasticsearch和 Kibana, Logstash的配置如下：  
 ```jshelllanguage
 input {
   tcp {
