@@ -14,7 +14,7 @@ spring:
       type: rabbit
   rabbitmq:
     addresses: 192.168.10.100
-    port: 15672
+    port: 5672
     username: admin
     password: 12345
     virtual-host: test
