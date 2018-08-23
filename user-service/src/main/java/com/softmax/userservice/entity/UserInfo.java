@@ -1,4 +1,4 @@
-package com.userservice.entity;
+package com.softmax.userservice.entity;
 
 
 /**

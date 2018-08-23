@@ -1,4 +1,4 @@
-package com.userservice;
+package com.softmax.userservice;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

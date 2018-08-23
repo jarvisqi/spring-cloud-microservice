@@ -1,6 +1,6 @@
-package com.userservice.service.fallback;
+package com.softmax.userservice.service.fallback;
 
-import com.userservice.service.UserOrderService;
+import com.softmax.userservice.service.UserOrderService;
 import org.springframework.stereotype.Component;
 
 /**

@@ -1,6 +1,6 @@
-package com.userservice.service;
+package com.softmax.userservice.service;
 
-import com.userservice.service.fallback.UserOrderFallback;
+import com.softmax.userservice.service.fallback.UserOrderFallback;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;

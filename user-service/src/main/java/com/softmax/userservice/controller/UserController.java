@@ -1,6 +1,6 @@
-package com.userservice.controller;
+package com.softmax.userservice.controller;
 
-import com.userservice.entity.UserInfo;
+import com.softmax.userservice.entity.UserInfo;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Value;
