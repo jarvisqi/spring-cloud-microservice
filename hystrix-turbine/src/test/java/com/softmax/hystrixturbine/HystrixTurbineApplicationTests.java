@@ -1,4 +1,4 @@
-package com.hystrixturbine;
+package com.softmax.hystrixturbine;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
