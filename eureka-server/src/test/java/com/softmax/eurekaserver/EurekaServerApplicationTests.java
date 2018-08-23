@@ -1,4 +1,4 @@
-package com.eurekaserver;
+package com.softmax.eurekaserver;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
