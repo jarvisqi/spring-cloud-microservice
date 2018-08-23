@@ -1,4 +1,4 @@
-package com.eurekaribbon;
+package com.softmax.eurekaribbon;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
