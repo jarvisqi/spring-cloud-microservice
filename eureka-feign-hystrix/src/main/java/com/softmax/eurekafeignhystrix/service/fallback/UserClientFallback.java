@@ -1,6 +1,6 @@
-package com.eurekafeignhystrix.service.fallback;
+package com.softmax.eurekafeignhystrix.service.fallback;
 
-import com.eurekafeignhystrix.service.UserClient;
+import com.softmax.eurekafeignhystrix.service.UserClient;
 import org.springframework.stereotype.Component;
 
 /**

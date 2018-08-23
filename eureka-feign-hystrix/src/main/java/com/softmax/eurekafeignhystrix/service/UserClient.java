@@ -1,6 +1,6 @@
-package com.eurekafeignhystrix.service;
+package com.softmax.eurekafeignhystrix.service;
 
-import com.eurekafeignhystrix.service.fallback.UserClientFallback;
+import com.softmax.eurekafeignhystrix.service.fallback.UserClientFallback;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;

@@ -1,6 +1,6 @@
-package com.eurekafeignhystrix.controller;
+package com.softmax.eurekafeignhystrix.controller;
 
-import com.eurekafeignhystrix.service.UserClient;
+import com.softmax.eurekafeignhystrix.service.UserClient;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;

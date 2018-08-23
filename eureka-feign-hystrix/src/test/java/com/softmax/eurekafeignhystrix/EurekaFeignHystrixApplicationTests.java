@@ -1,4 +1,4 @@
-package com.eurekafeignhystrix;
+package com.softmax.eurekafeignhystrix;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;

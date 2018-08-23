@@ -1,4 +1,4 @@
-package com.eurekafeignhystrix.config;
+package com.softmax.eurekafeignhystrix.config;
 
 import feign.Logger;
 import org.springframework.context.annotation.Bean;
