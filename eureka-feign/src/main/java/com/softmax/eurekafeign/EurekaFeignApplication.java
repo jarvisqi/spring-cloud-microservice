@@ -1,4 +1,4 @@
-package com.eurekafeign;
+package com.softmax.eurekafeign;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
