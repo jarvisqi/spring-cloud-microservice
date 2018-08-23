@@ -1,4 +1,4 @@
-package com.orderservice.controller;
+package com.softmax.orderservice.controller;
 
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.RequestMapping;

@@ -1,4 +1,4 @@
-package com.orderservice;
+package com.softmax.orderservice;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;

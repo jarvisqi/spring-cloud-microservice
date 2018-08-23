@@ -1,4 +1,4 @@
-package com.orderservice;
+package com.softmax.orderservice;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
