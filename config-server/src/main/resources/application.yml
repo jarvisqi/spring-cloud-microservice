@@ -10,6 +10,7 @@ spring:
           search-paths: config-server
           username:
           password:
+          default-label: master
 
 server:
   port: 9400
