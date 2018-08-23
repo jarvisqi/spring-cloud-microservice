@@ -1,4 +1,4 @@
-package com.zuulgateway;
+package com.softmax.zuulgateway;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;

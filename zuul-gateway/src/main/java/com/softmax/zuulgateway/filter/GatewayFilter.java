@@ -1,4 +1,4 @@
-package com.zuulgateway.filter;
+package com.softmax.zuulgateway.filter;
 
 import com.netflix.zuul.ZuulFilter;
 import com.netflix.zuul.context.RequestContext;

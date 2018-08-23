@@ -1,4 +1,4 @@
-package com.zuulgateway;
+package com.softmax.zuulgateway;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

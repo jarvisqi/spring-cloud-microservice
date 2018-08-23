@@ -1,4 +1,4 @@
-package com.zuulgateway.provider;
+package com.softmax.zuulgateway.provider;
 
 import org.springframework.cloud.netflix.zuul.filters.route.FallbackProvider;
 import org.springframework.http.HttpHeaders;
