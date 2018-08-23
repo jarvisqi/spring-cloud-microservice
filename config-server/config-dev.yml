@@ -1,2 +1,6 @@
-name: softmax
-version: 0.0.1
+spring:
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://192.168.10.100:3306/spring?useSSL=false
+    username: test
+    password: 123456
