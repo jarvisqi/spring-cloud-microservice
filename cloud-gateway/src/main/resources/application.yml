@@ -17,7 +17,7 @@ spring:
     port: 5672
     username: admin
     password: 12345
-    virtual-host: test
+    virtual-host: sleuth
   cloud:
     gateway:
       discovery:
