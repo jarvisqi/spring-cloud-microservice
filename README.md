@@ -46,8 +46,8 @@ java -jar order-service-0.0.1-SNAPSHOT.jar --server.port=9121
 - http://localhost:9310/v1/order/**,请求Order-Service  
 
 11、spring cloud sleuth 服务链路追踪  
-- 1、Centos7 安装 zipkin服务端，`注意：Zipkin 不再推荐我们来自定义 Server 端了，网上的各种教程基本都是之前版本的，基本都数互相抄的，请无视`      
-- 2、使用命令启动 :  
+- Centos7 安装 zipkin服务端，`注意：Zipkin 不再推荐我们来自定义 Server 端了，网上的各种教程基本都是之前版本的，基本都数互相抄的，请无视`      
+- 使用命令启动 :  
 ```jshelllanguage
 # 通过环境变量让 Zipkin 从 RabbitMQ 中读取信息，如下：  
 java -jar zipkin.jar --RABBIT_ADDRESSES=localhost:5672 --RABBIT_USER=admin --RABBIT_PASSWORD=12345 --RABBIT_VIRTUAL_HOST=sleuth 
@@ -57,7 +57,7 @@ or
 java -jar zipkin.jar --RABBIT_URI=amqp://admin:12345@localhost:5672/sleuth
 
 ``` 
-- 3、user-service,order-service,zuul-gateway 添加依赖：    
+- user-service,order-service,zuul-gateway 添加依赖：    
 ```jshelllanguage
         <!--服务链路追踪-->
         <dependency>
@@ -74,7 +74,7 @@ java -jar zipkin.jar --RABBIT_URI=amqp://admin:12345@localhost:5672/sleuth
             <artifactId>spring-cloud-stream-binder-rabbit</artifactId>
         </dependency>   
 ```
-- 4、user-service,order-service,zuul-gateway 的 application.yml 添加以下配置:   
+- user-service,order-service,zuul-gateway 的 application.yml 添加以下配置:   
 - zuul-gateway -> order-service -> user-service 形成调用链路  
 ```xml
   # 服务追踪配置 
@@ -98,8 +98,8 @@ java -jar zipkin.jar --RABBIT_URI=amqp://admin:12345@localhost:5672/sleuth
     password: 12345
     virtual-host: sleuth
 ``` 
-- 5、http://192.168.10.100:9411/zipkin/ ，查看所有的 trace信息   
-- 6、将服务追踪trace信息持久化到 Elasticsearch
+- http://192.168.10.100:9411/zipkin/ ，查看所有的 trace信息   
+- 将服务追踪trace信息持久化到 Elasticsearch
 >>>1、安装Elasticsearch,并启动 http://192.168.10.100:9200/            
 >>>2、安装Elasticsearch-head，并启动  http://192.168.10.100:9100/        
 >>>3、重新启动 Zipkin 服务，并指定存储方式为 Elasticsearch，数据传输是 RabbitMQ，启动命令如下：
