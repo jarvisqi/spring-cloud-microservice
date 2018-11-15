@@ -43,8 +43,6 @@ spring:
           filters:
             - StripPrefix=1
 
-
-
 eureka:
   client:
     service-url:
